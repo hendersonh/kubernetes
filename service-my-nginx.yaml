@@ -17,7 +17,7 @@ spec:
   externalTrafficPolicy: Cluster
   ports:
   - name: 8080-80
-    nodePort: 5858 
+    nodePort: 30058 
     port: 8080
     protocol: TCP
     targetPort: 80
