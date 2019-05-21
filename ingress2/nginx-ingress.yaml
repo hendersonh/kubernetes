@@ -1,0 +1,15 @@
+apiVersion:                               extensions/v1beta1
+kind:                                     Ingress
+metadata:
+  name:                                   nginx-public
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: test.hendy.local
+    http:
+      paths:
+      - path:                             /web
+        backend:
+          serviceName:                    nginx
+          servicePort:                    80

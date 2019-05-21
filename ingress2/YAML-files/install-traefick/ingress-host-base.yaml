@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: hendy-local-ingress
+spec:
+  rules:
+  - host: blue.hendy.local 
+    http:
+      paths:
+      - backend:
+          serviceName: nginx-blue 
+          servicePort: 80
+  - host: green.hendy.local
+    http:
+      paths:
+      - backend:
+          serviceName: nginx-green 
+          servicePort: 80
+  - host: main.hendy.local
+    http:
+      paths:
+      - backend:
+          serviceName: nginx-main
+          servicePort: 80 

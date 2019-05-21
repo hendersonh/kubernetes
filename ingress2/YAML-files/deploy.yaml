@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: <app_name>-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: <app_name>
+  template:
+    metadata:
+      labels:
+        app: <app_name>
+    spec:
+      containers:
+      - name: <app_name>
+        image: <region>.icr.io/<namespace>/<my_image>:<tag>
